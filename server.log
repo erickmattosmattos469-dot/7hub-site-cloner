@@ -1,0 +1,22 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  Fi127.0.0.1 - - [28/Jul/2026 03:02:49] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [28/Jul/2026 03:02:49] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [28/Jul/2026 03:02:51] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [28/Jul/2026 03:02:51] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [28/Jul/2026 03:02:53] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [28/Jul/2026 03:02:53] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [28/Jul/2026 03:02:55] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [28/Jul/2026 03:02:55] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [28/Jul/2026 03:02:57] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [28/Jul/2026 03:02:57] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [28/Jul/2026 03:02:59] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [28/Jul/2026 03:02:59] "POST / HTTP/1.1" 501 -
+10.138.129.1 - - [28/Jul/2026 03:03:00] "HEAD / HTTP/1.1" 200 -
+10.138.129.1 - - [28/Jul/2026 03:03:00] "GET / HTTP/1.1" 200 -
+10.138.129.1 - - [28/Jul/2026 03:03:01] "GET / HTTP/1.1" 200 -
+10.138.129.1 - - [28/Jul/2026 03:03:01] "GET /css/index.css HTTP/1.1" 200 -
+10.138.129.1 - - [28/Jul/2026 03:03:01] code 404, message File not found
+10.138.129.1 - - [28/Jul/2026 03:03:01] "GET /favicon.ico HTTP/1.1" 404 -

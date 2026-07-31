@@ -528,3 +528,107 @@ Traceback (most recent call last):
 127.0.0.1 - - [31/Jul/2026 01:47:15] "POST / HTTP/1.1" 501 -
 127.0.0.1 - - [31/Jul/2026 01:47:17] code 501, message Unsupported method ('POST')
 127.0.0.1 - - [31/Jul/2026 01:47:17] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:47:23] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:47:23] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:47:25] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:47:25] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:47:27] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:47:27] "POST / HTTP/1.1" 501 -
+10.118.177.1 - - [31/Jul/2026 01:47:27] "HEAD / HTTP/1.1" 200 -
+10.118.177.1 - - [31/Jul/2026 01:47:27] "GET / HTTP/1.1" 200 -
+10.118.177.1 - - [31/Jul/2026 01:47:28] "GET / HTTP/1.1" 200 -
+10.118.177.1 - - [31/Jul/2026 01:47:28] "GET /css/index.css HTTP/1.1" 200 -
+10.118.177.1 - - [31/Jul/2026 01:47:28] "GET /assets/background.jpg HTTP/1.1" 200 -
+10.118.177.1 - - [31/Jul/2026 01:47:28] code 404, message File not found
+10.118.177.1 - - [31/Jul/2026 01:47:28] "GET /favicon.ico HTTP/1.1" 404 -
+10.118.177.1 - - [31/Jul/2026 01:47:31] "GET / HTTP/1.1" 200 -
+10.118.177.1 - - [31/Jul/2026 01:47:32] "GET /assets/background.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jul/2026 01:47:37] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:47:37] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:47:47] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:47:47] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:47:57] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:47:57] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:48:05] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:48:05] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:48:07] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:48:07] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:48:17] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:48:17] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:48:27] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:48:27] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:48:39] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:48:39] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:48:49] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:48:49] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:48:59] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:48:59] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:03] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:03] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:05] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:05] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:07] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:07] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:09] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:09] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:11] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:11] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:15] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:15] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:19] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:19] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:29] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:29] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:39] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:39] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:45] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:45] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:47] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:47] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:49] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:49] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:51] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:51] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:55] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:55] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:57] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:57] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:49:59] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:49:59] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:01] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:01] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:03] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:03] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:07] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:07] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:09] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:09] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:13] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:13] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:15] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:15] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:19] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:19] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:21] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:21] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:23] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:23] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:25] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:25] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:27] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:27] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:29] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:29] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:31] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:31] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:35] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:35] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:39] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:39] "POST / HTTP/1.1" 501 -
+10.118.177.1 - - [31/Jul/2026 01:50:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jul/2026 01:50:43] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:43] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:45] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:45] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [31/Jul/2026 01:50:49] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [31/Jul/2026 01:50:49] "POST / HTTP/1.1" 501 -

